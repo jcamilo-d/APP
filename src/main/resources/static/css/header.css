@@ -1,0 +1,30 @@
+header{
+width:100%;
+position:fixed;
+z-index:1;
+
+}
+
+.container{
+margin-top:50px;
+}
+nav,
+    .offcanvas,.dropdown-menu {
+      background-color: #1e293b;
+    }
+    .navbar-toggler {
+      border: none;
+    }
+    .navbar-toggler:focus {
+      outline: none;
+      box-shadow: none;
+    }
+
+    @media (max-width: 768px) {
+      .navbar-nav > li:hover{
+        background-color: #0dcaf0;
+      }
+    }
+    .dropdown-menu > li:hover{
+        background-color: #0dcaf0;
+      }
