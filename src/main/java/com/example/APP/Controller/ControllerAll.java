@@ -14,4 +14,9 @@ public class ControllerAll {
         return "index";
     }
 
+    @GetMapping("/home")
+    public String paginaInicio(Model model){
+    return "inicio";
+    }
+
 }
