@@ -9,7 +9,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 @Controller
-@RequestMapping
+@RequestMapping("/")
 public class ControllerCategoria {
 
     @Autowired
@@ -18,17 +18,17 @@ public class ControllerCategoria {
     @GetMapping("/categorias")
     public String listarCategorias(Model model){
         model.addAttribute("listaCategoria",service.listaCategoria());
-        model.addAttribute("titulo", "Inventario Categorias");
-        model.addAttribute("cuerpo", "Categorias");
+        model.addAttribute("titulo", "Ver Categorias");
+        model.addAttribute("cuerpo", "Registro de Categorias");
 
-        return "categorias";
+        return "admin/categorias";
     }
     @GetMapping("/categorias/nuevo")
     public String formularioCategoria(Model model){
-        model.addAttribute("titulo","Ingresar Categoria");
+        model.addAttribute("titulo","Ingresar NuevaCategoria");
         model.addAttribute("cuerpo","Registro de Categorias");
         model.addAttribute("category",new Categoria());
-        return "categoriaNueva";
+        return "admin/categoriaNueva";
     }
 
     @PostMapping("/categorias/guardar")
@@ -41,7 +41,7 @@ public class ControllerCategoria {
     public String editarCategoria(@PathVariable("id") int id, Model model){
         //Optional<Estudiante> est= service.editar(id);
         model.addAttribute("category",service.editar(id));
-        return "categoriaNueva";
+        return "admin/categoriaNueva";
     }
 
     @GetMapping("/categorias/eliminar/{id}")

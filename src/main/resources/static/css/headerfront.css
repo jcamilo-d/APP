@@ -7,6 +7,7 @@ header{
     background: #121212;
     position: fixed;
     top: 0px;
+    z-index:1;
 }
 a{
     text-decoration: none;
@@ -102,11 +103,15 @@ a{
     padding: 5px;
 
 }
-#conten-search-header>a>svg{
-    width: 30px;
-    height: 30px;
-    fill: #FFFFFF;
+    #conten-search-header>a>svg{
+        width: 30px;
+        height: 30px;
+        fill: #FFFFFF;
 }
+    .container{
+    margin-top:50px;
+    }
+
 
 
 

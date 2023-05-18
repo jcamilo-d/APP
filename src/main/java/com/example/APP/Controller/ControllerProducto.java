@@ -19,7 +19,7 @@ import java.nio.file.Paths;
 import java.util.List;
 
 @Controller
-@RequestMapping
+@RequestMapping("/")
 public class ControllerProducto {
 
     @Autowired
@@ -31,13 +31,21 @@ public class ControllerProducto {
     @Autowired
     private interfaceDispositivo dispositive;
 
+
+    @GetMapping("")
+    public  String verPaginaInicio(Model model){
+        model.addAttribute("titulo","Administrador JCGames");
+        model.addAttribute("cuerpo","JC GAMES");
+        return "admin/index";
+    }
+
     @GetMapping("/productos")
     public String listarProductos(Model model){
         model.addAttribute("listaProducto", service.listaProductos());
-        model.addAttribute("titulo", "Videojuegos");
+        model.addAttribute("titulo", "Ver VideoJuegos");
         model.addAttribute("cuerpo", "Juegos");
 
-        return "productos";
+        return "admin/productos";
     }
     @GetMapping("/productos/nuevo")
     public String formularioProducto(Model model){
@@ -47,7 +55,7 @@ public class ControllerProducto {
         model.addAttribute("listaCategorias",category.listaCategoria());
         model.addAttribute("listaFormatos",format.listaFormatos());
         model.addAttribute("listaDispositivos",dispositive.listaDispositivos());
-        return "ProductoNuevo";
+        return "admin/productoNuevo";
     }
 
     @PostMapping("/productos/guardar")
@@ -80,7 +88,7 @@ public class ControllerProducto {
         model.addAttribute("listaCategorias",category.listaCategoria());
         model.addAttribute("listaFormatos",format.listaFormatos());
         model.addAttribute("listaDispositivos",dispositive.listaDispositivos());
-        return "productoNuevo";
+        return "admin/productoNuevo";
     }
 
     @GetMapping("/productos/eliminar/{id}")

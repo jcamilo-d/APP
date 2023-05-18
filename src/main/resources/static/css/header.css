@@ -8,6 +8,14 @@ z-index:1;
 .container{
 margin-top:50px;
 }
+
+#logo-header{
+    width: 55px;
+    height: 55px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-right: 20px ;
+}
 nav,
     .offcanvas,.dropdown-menu {
       background-color: #1e293b;

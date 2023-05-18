@@ -16,18 +16,18 @@ public class ControllerDispositivo {
 
     @GetMapping("/dispositivos")
     public String  listarDispositivos(Model model){
-        model.addAttribute("titulo","dispositivosVideojuegos");
+        model.addAttribute("titulo","Ver Dispositivos");
         model.addAttribute("cuerpo","Dispositivos para Videojuegos");
         model.addAttribute("listaDispositivo",service.listaDispositivos());
-        return "dispositivos";
+        return "admin/dispositivos";
     }
 
     @GetMapping("/dispositivos/nuevo")
     public String formularioDispositivo(Model model){
-        model.addAttribute("titulo","Ingresar Dispositivo");
+        model.addAttribute("titulo","Ingresar NuevoDispositivo");
         model.addAttribute("cuerpo","Registro de Dispositivo");
         model.addAttribute("dispositive",new Dispositivo());
-        return "dispositivoNuevo";
+        return "admin/dispositivoNuevo";
     }
 
     @PostMapping("/dispositivos/guardar")
@@ -39,7 +39,7 @@ public class ControllerDispositivo {
     @GetMapping("/dispositivos/editar/{id}")
     public String editarDispositivo(@PathVariable("id") int id, Model model){
         model.addAttribute("dispositive",service.editar(id));
-        return "dispositivoNuevo";
+        return "admin/dispositivoNuevo";
     }
 
     @GetMapping("/dispositivos/eliminar/{id}")
