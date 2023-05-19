@@ -1,5 +1,8 @@
 package com.example.APP.Controller;
 
+import com.example.APP.Interface.interfaceCategoria;
+import com.example.APP.Interface.interfaceDispositivo;
+import com.example.APP.Interface.interfaceFormato;
 import com.example.APP.Interface.interfaceProducto;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -11,14 +14,23 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("/")
 public class ControllerUser {
 
-
+    @Autowired
+    private interfaceCategoria category;
+    @Autowired
+    private interfaceFormato format;
+    @Autowired
+    private interfaceDispositivo dispositive;
     @Autowired
     private interfaceProducto service;
 
 
     @GetMapping("/home")
     public String paginaInicio(Model model){
+        model.addAttribute("pesos","COP ");
         model.addAttribute("listaProductos",service.listaProductos());
+        model.addAttribute("listaCategorias",category.listaCategoria());
+        model.addAttribute("listaFormatos",format.listaFormatos());
+        model.addAttribute("listaDispositivos",dispositive.listaDispositivos());
 
     return "user/inicio";
     }

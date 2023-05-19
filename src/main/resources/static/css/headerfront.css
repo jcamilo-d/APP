@@ -7,11 +7,8 @@ header{
     background: #121212;
     position: fixed;
     top: 0px;
-    z-index:1;
 }
-a{
-    text-decoration: none;
-}
+
 
 #conten-header{
     width: 90%;
@@ -44,7 +41,6 @@ a{
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    list-style:none;
     gap: 20px;
 }
 
@@ -52,7 +48,8 @@ a{
     height: 70px;
     color: #9CA0A0;
     transition: ease all 0.5s;
-
+    text-decoration: none;
+    list-style: none;
 }
 #conten-nav-header>nav>ul a:hover {
     color: #fff;
@@ -103,14 +100,11 @@ a{
     padding: 5px;
 
 }
-    #conten-search-header>a>svg{
-        width: 30px;
-        height: 30px;
-        fill: #FFFFFF;
+#conten-search-header>a>svg{
+    width: 30px;
+    height: 30px;
+    fill: #FFFFFF;
 }
-    .container{
-    margin-top:50px;
-    }
 
 
 

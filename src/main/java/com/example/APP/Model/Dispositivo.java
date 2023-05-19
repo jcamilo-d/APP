@@ -10,6 +10,7 @@ public class Dispositivo {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id_dispositivo")
     private int id;
     @Column(length = 50, nullable = false)
     private String nombre;

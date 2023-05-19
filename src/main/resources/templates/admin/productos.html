@@ -19,7 +19,6 @@
         <th>NOMBRE</th>
         <th>CATEGORIA</th>
         <th>FORMATO</th>
-        <th>DISPONIBLE PARA</th>
         <th>PRECIO</th>
         <th>STOCK</th>
         <th>IMAGEN</th>
@@ -32,7 +31,6 @@
         <td th:text = "${producto.nombre}" ></td>
         <td th:text = "${producto.categoria.nombre}" ></td>
         <td th:text = "${producto.formato.nombre}" ></td>
-        <td th:text = "${producto.dispositivo.nombre}" ></td>
         <td th:text = "${producto.precio}"></td>
         <td th:text = "${producto.cantidad}"></td>
         <td style="width: 10%;"><img th:src="@{/img/{filename}(filename=*{producto.imagen})}" style="width: 20%;"></td>

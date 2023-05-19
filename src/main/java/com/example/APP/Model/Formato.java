@@ -9,6 +9,7 @@ import lombok.Data;
 public class Formato {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id_formato")
     private int id;
     @Column(length = 30, nullable = false)
     private String nombre;

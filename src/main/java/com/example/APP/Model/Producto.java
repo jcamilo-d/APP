@@ -5,6 +5,7 @@ import lombok.Data;
 import org.hibernate.Length;
 
 import java.sql.Blob;
+import java.util.List;
 
 @Data
 @Entity
@@ -12,6 +13,7 @@ import java.sql.Blob;
 public class Producto {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id_producto")
     private int id;
     @Column(length = 100, nullable = false)
     private String nombre;
@@ -24,9 +26,10 @@ public class Producto {
     @ManyToOne
     @JoinColumn(name = "categoria_id")
     private Categoria categoria;
-    @ManyToOne
-    @JoinColumn(name = "dispositivo_id")
-    private Dispositivo dispositivo;
+    @ManyToMany(fetch = FetchType.EAGER)
+    @JoinTable(name = "producto_dispositivo", joinColumns = @JoinColumn(name = "id_producto"),
+                inverseJoinColumns = @JoinColumn(name = "id_dispositivo"))
+    private List<Dispositivo> dispositivo;
 
     @ManyToOne
     @JoinColumn(name = "formato_id")
