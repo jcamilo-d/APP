@@ -18,6 +18,9 @@ public class Producto {
     @Column(length = 100, nullable = false)
     private String nombre;
 
+    @Column(length = 1000, nullable = false)
+    private String descripcion;
+
     private String imagen;
     @Column
     private int precio;

@@ -1,0 +1,49 @@
+<ul>
+                <div class="dropdown-content">
+                    <a th:field="*{categoria}" href="#" class="btn-dropdown" data-drop="drop-uno">
+                <span>
+                  CATEGORIA
+                </span>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>chevron-down</title><path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z" /></svg>
+                    </a>
+
+                    <div class="content-info-dropdown drop-uno">
+                        <ul >
+                            <li th:each="categoria : ${listaCategorias}">
+                                <a th:text="${categoria.nombre}" th:value="${categoria.id}" href="#">ejemplo 1</a>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="dropdown-content">
+                    <a th:field="*{formato}" href="#" class="btn-dropdown" data-drop="drop-dos">
+                <span>
+                  FORMATO
+                </span>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>chevron-down</title><path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z" /></svg>
+                    </a>
+
+                    <div class="content-info-dropdown drop-dos">
+                        <ul >
+                            <li th:each="formato : ${listaFormatos}">
+                                <a th:text="${formato.nombre}" th:value="${formato.id}" href="#">ejemplo 1</a>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="dropdown-content">
+                    <a th:field="*{dispositivo}" href="#" class="btn-dropdown" data-drop="drop-tres">
+                <span>
+                  DISPOSITIVO
+                </span>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>chevron-down</title><path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z" /></svg>
+                    </a>
+
+                    <div class="content-info-dropdown drop-tres">
+                        <ul >
+                            <li th:each="dispositivo : ${listaDispositivos}">
+                                <a th:text="${dispositivo.nombre}" th:value="${dispositivo.id}" href="#">ejemplo 1</a>
+                        </ul>
+                    </div>
+                </div>
+            </ul>

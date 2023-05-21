@@ -26,13 +26,24 @@ public class ControllerUser {
 
     @GetMapping("/home")
     public String paginaInicio(Model model){
-        model.addAttribute("pesos","COP ");
+        model.addAttribute("titulo","JCGAMES HOME");
         model.addAttribute("listaProductos",service.listaProductos());
         model.addAttribute("listaCategorias",category.listaCategoria());
         model.addAttribute("listaFormatos",format.listaFormatos());
         model.addAttribute("listaDispositivos",dispositive.listaDispositivos());
 
     return "user/inicio";
+    }
+
+    @GetMapping("/games")
+    public String verJuegos(Model model){
+        model.addAttribute("titulo","JCGAMES VIDEOGAMES");
+        model.addAttribute("pesos","COP ");
+        model.addAttribute("listaProductos",service.listaProductos());
+        model.addAttribute("listaCategorias",category.listaCategoria());
+        model.addAttribute("listaFormatos",format.listaFormatos());
+        model.addAttribute("listaDispositivos",dispositive.listaDispositivos());
+        return "user/games";
     }
 
 }

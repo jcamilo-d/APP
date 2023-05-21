@@ -20,8 +20,14 @@
 
                     <div class="form-group">
                         <label>Nombre del Juego: </label>
-                        <input type="text" name="nombre" th:field="*{nombre}" class="form-control" placeholder="Escriba el Nombre del Juego" required>
+                        <input type="text" name="nombre"  th:field="*{nombre}" class="form-control" placeholder="Escriba el Nombre del Juego" required>
                     </div>
+
+                     <div class="form-group">
+                        <label>Descripcion del Juego: </label>
+                         <textarea  cols="15" rows="10" style="height: 112px;"name="descripcion" th:field="*{descripcion}" class="form-control" placeholder="Escriba la Descripcion del Juego" required></textarea>
+                    </div>
+
                     <div class="form-group">
                         <label>Categoria: </label>
                         <select th:field="*{categoria}" class="form-select" required>
@@ -50,11 +56,11 @@
                     </div>
                     <div class="form-group">
                         <label>Precio: </label>
-                        <input type="text" name="precio" th:field="*{precio}" class="form-control" placeholder="precio en pesos colombianos" required>
+                        <input type="text" th:value="${vacio}" name="precio" th:field="*{precio}" class="form-control" placeholder="SOLO USE NUMEROS. NO use simbolos, caracteres ni letras" required>
                     </div>
                     <div class="form-group">
                         <label>Unidades Disponibles: </label>
-                        <input type="number" name="cantidad" th:field="*{cantidad}" class="form-control" required>
+                        <input type="number" name="cantidad" th:field="*{cantidad}" class="form-control" placeholder="SOLO USE NUMEROS. NO use simbolos, caracteres ni letras" required>
                     </div>
                     <div class="form-group">
                         <label>Imagen: </label>

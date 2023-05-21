@@ -22,7 +22,7 @@ ul{
 #principal-content {
     width: 100%;
     height: calc(100vh - 70px);
-    margin-top: 70px;
+    margin-top:70px;
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -32,21 +32,87 @@ ul{
 
 #principal-content > div{
     padding: 0px 30px;
-    height: calc(100vh - 70px);
+    height: 100vh;
     background-color: #121212;
     overflow:auto;
 }
 
 #content-header-left {
-    width: 15%;
+    width: 20%;
 }
 #content-header-left a {
     text-decoration: none;
     list-style: none;
 }
 
+#content-header-left a {
+    width: 100% !important;
+    padding: 5px 15px;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    color: #9CA0A0;
+}
+#content-header-left a:hover {
+    background-color: #202020;
+}
+
+#content-header-left>ul{
+    width: 100%;
+    padding: 0px;
+    margin-top:70px;
+}
+
+.dropdown-content {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0px 15px;
+}
+
+.dropdown-content>a {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.dropdown-content>a>svg {
+    height: 20px;
+    fill: #ffffff;
+}
+
+.content-info-dropdown.active {
+    display: flex;
+}
+
+.content-info-dropdown {
+    width: 100%;
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+.content-info-dropdown ul {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0px;
+}
+
+
+#content-header-left li {
+    width: 100%;
+    display: flex;
+    margin-left:40px;
+}
 #content-info {
-    width: 85%;
+    width: 80%;
     overflow: auto;
+    margin-top: 70px;
+
 }
 
