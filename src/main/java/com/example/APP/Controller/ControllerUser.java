@@ -26,7 +26,7 @@ public class ControllerUser {
 
     @GetMapping("/home")
     public String paginaInicio(Model model){
-        model.addAttribute("titulo","JCGAMES HOME");
+        model.addAttribute("titulo","JCGAMES Home");
         model.addAttribute("listaProductos",service.listaProductos());
         model.addAttribute("listaCategorias",category.listaCategoria());
         model.addAttribute("listaFormatos",format.listaFormatos());
@@ -37,13 +37,24 @@ public class ControllerUser {
 
     @GetMapping("/games")
     public String verJuegos(Model model){
-        model.addAttribute("titulo","JCGAMES VIDEOGAMES");
+        model.addAttribute("titulo","JCGAMES Videogames");
         model.addAttribute("pesos","COP ");
         model.addAttribute("listaProductos",service.listaProductos());
         model.addAttribute("listaCategorias",category.listaCategoria());
         model.addAttribute("listaFormatos",format.listaFormatos());
         model.addAttribute("listaDispositivos",dispositive.listaDispositivos());
         return "user/games";
+    }
+
+    @GetMapping("/LastGames")
+    public String verJuegosRecientes(Model model){
+        model.addAttribute("titulo","JCGAMES Last games");
+        model.addAttribute("pesos","COP ");
+        model.addAttribute("listaProductos",service.listaProductos());
+        model.addAttribute("listaCategorias",category.listaCategoria());
+        model.addAttribute("listaFormatos",format.listaFormatos());
+        model.addAttribute("listaDispositivos",dispositive.listaDispositivos());
+        return "user/lastGames";
     }
 
 }

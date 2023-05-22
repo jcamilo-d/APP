@@ -32,7 +32,7 @@ ul{
 
 #principal-content > div{
     padding: 0px 30px;
-    height: 100vh;
+    height: calc(100vh - 70px);
     background-color: #121212;
     overflow:auto;
 }
@@ -112,7 +112,5 @@ ul{
 #content-info {
     width: 80%;
     overflow: auto;
-    margin-top: 70px;
-
 }
 

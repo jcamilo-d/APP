@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title th:text="${titulo}"></title>
+    <link rel="stylesheet" href="/css/headerfront.css">
+    <link rel="stylesheet" href="/css/generalStyle.css">
+</head>
+<body>
+<main>
+    <header th:insert="/user/headerfront.html"></header>
+<div id="principal-content">
+    <div  id="content-header-left" th:insert="/user/headerLeft.html">
+
+    </div>
+    <div id="content-info">
+        <h1>news</h1>
+    </div>
+</main>
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+<script>
+  $(".btn-dropdown").click(function () {
+    const dataDrop = $(this).attr("data-drop")
+
+    $(`.${dataDrop}`).toggleClass("active")
+  })
+</script>
+</html>
