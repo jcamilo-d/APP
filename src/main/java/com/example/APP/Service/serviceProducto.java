@@ -33,4 +33,16 @@ public class serviceProducto implements interfaceProducto {
         repositorio.deleteById(id);
 
     }
+
+    @Override
+    public List<Producto> searchByFullNameQueryNative(String fullName) {
+        return repositorio.searchByFullNameQueryNative(fullName);
+    }
+
+    @Override
+    public List<Producto> searchByFullNameQueryNative2(String fullName) {
+        return repositorio.searchByFullNameQueryNative2(fullName);
+    }
+
+
 }

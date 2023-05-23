@@ -36,7 +36,7 @@ public class ControllerProducto {
     @GetMapping("")
     public  String verPaginaInicio(Model model){
         model.addAttribute("titulo","Administrador JCGames");
-        model.addAttribute("cuerpo","JC GAMES");
+        model.addAttribute("cuerpo","¡BIENVENIDO AL PANEL DE ADMINISTRADOR!");
         return "admin/index";
     }
 

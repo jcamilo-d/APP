@@ -16,7 +16,7 @@
     </div>
     <div id="content-info">
         <div id="content-cards-game">
-            <a th:each="producto : ${listaProductos}" th:href="@{/home}" class="card-game">
+            <a th:each="producto : ${busqueda}" th:href="@{/home}" class="card-game">
                 <img th:src="@{/img/{filename}(filename=*{producto.imagen})}"  th:alt="*{producto.imagen}">
                 <div>
                     <h4 th:text="*{producto.nombre}" ></h4>

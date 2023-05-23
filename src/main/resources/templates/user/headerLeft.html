@@ -10,7 +10,8 @@
                     <div class="content-info-dropdown drop-uno">
                         <ul >
                             <li th:each="categoria : ${listaCategorias}">
-                                <a th:text="${categoria.nombre}" th:value="${categoria.id}" href="#">ejemplo 1</a>
+                                <a th:text="${categoria.nombre}" th:value="${categoria.id}" th:href="@{/searchByQueryNative?fullNameQueryNative=} + ${categoria.nombre}"></a>
+                            </li>
                         </ul>
                     </div>
                 </div>
@@ -26,7 +27,7 @@
                     <div class="content-info-dropdown drop-dos">
                         <ul >
                             <li th:each="formato : ${listaFormatos}">
-                                <a th:text="${formato.nombre}" th:value="${formato.id}" href="#">ejemplo 1</a>
+                                <a th:text="${formato.nombre}" th:value="${formato.id}" th:href="@{/searchByQueryNative?fullNameQueryNative=} + ${formato.nombre}"></a>
                         </ul>
                     </div>
                 </div>
@@ -42,8 +43,9 @@
                     <div class="content-info-dropdown drop-tres">
                         <ul >
                             <li th:each="dispositivo : ${listaDispositivos}">
-                                <a th:text="${dispositivo.nombre}" th:value="${dispositivo.id}" href="#">ejemplo 1</a>
+                                <a th:text="${dispositivo.nombre}" th:value="${dispositivo.id}" th:href="@{/searchByQueryNativeDispositive?fullNameQueryNative=} + ${dispositivo.nombre}"></a>
                         </ul>
                     </div>
                 </div>
             </ul>
+
