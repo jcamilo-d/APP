@@ -71,11 +71,15 @@ public class ControllerUser {
     @GetMapping("/searchByQueryNative")
     public String searchCustomerQueryNative(@RequestParam("fullNameQueryNative") String fullName, Model model) {
         try {
+            model.addAttribute("icono","display:none;");
             model.addAttribute("busqueda", service.searchByFullNameQueryNative(fullName));
             model.addAttribute("pesos","COP ");
             model.addAttribute("lists", verHeaderLeft(model));
         }catch (Exception e){
             e.printStackTrace();
+        }
+        if (service.searchByFullNameQueryNative(fullName).isEmpty()){
+            model.addAttribute("icono","display:flex;");
         }
 
         return "user/buscarJuegos";
@@ -85,12 +89,16 @@ public class ControllerUser {
     @GetMapping("/searchByQueryNativeDispositive")
     public String searchCustomerQueryNativeDispositive(@RequestParam("fullNameQueryNative") String fullName, Model model){
             try {
+                model.addAttribute("icono","display:none;");
                 model.addAttribute("busqueda", service.searchByFullNameQueryNative2(fullName));
                 model.addAttribute("pesos","COP ");
                 model.addAttribute("lists", verHeaderLeft(model));
             }catch (Exception e){
                 e.printStackTrace();
             }
+        if (service.searchByFullNameQueryNative2(fullName).isEmpty()){
+            model.addAttribute("icono","display:flex;");
+        }
 
         return "user/buscarJuegos";
     }
