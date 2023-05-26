@@ -4,8 +4,10 @@ import com.example.APP.Interface.interfaceCategoria;
 import com.example.APP.Interface.interfaceDispositivo;
 import com.example.APP.Interface.interfaceFormato;
 import com.example.APP.Interface.interfaceProducto;
-import com.example.APP.Model.Producto;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.data.repository.query.Param;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.HttpStatusCode;
@@ -63,8 +65,13 @@ public class ControllerUser {
     public String verJuegosRecientes(Model model){
         model.addAttribute("titulo","JCGAMES Last games");
         model.addAttribute("pesos","COP ");
-        model.addAttribute("listaProductos",service.listaProductos());
-        model.addAttribute("lists", verHeaderLeft(model));
+        try {
+            model.addAttribute("lastGames",service.ultiomosJuegos());
+            model.addAttribute("lists", verHeaderLeft(model));
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+
         return "user/lastGames";
     }
 

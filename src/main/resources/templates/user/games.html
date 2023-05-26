@@ -15,17 +15,58 @@
 
     </div>
     <div id="content-info">
+
+        <div  class="popup " >
+            <div class="content-popup">
+                <div class="content-btn-close-popup">
+                    <a href="#" id="btn-close-popup">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>close</title><path d="M19,6.41L17.59,5L12,10.59L6.41,5L5,6.41L10.59,12L5,17.59L6.41,19L12,13.41L17.59,19L19,17.59L13.41,12L19,6.41Z" /></svg>
+                    </a>
+                </div>
+                <div class="content-info-popup">
+                    <img id="imagen-juego-popup" src="" alt="">
+                    <div class="info-juego">
+                        <h2 id="nombre-juego-popup">Nombre Juego</h2>
+                        <p id="descripcion-juego-popup"></p>
+                        <div id="content-desc-game">
+                            <div>
+                                <span>Categoria:</span>
+                                <p id="categoria-juego-popup"></p>
+                            </div>
+                            <div>
+                                <span>Formato:</span>
+                                <p id="formato-juego-popup"></p>
+                            </div>
+                            <div>
+                                <span>DISPONIBLE PARA: </span>
+                                <ul id="dispositivo-juego-popup"></ul>
+                            </div>
+                            <div>
+                                <span>Precio:</span>
+                                <p id="precio-juego-popup"></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <div id="content-cards-game">
-            <a th:each="producto : ${listaProductos}" th:href="@{/home}" class="card-game">
+            <a th:each="producto : ${listaProductos}"  href="#" class="card-game hero_cta"
+               th:data-imagen="${producto.imagen}" th:data-nombre="${producto.nombre}" th:data-detalles="${producto.descripcion}"
+               th:data-categoria="${producto.categoria.nombre}" th:data-formato="${producto.formato.nombre}"
+               th:data-precio="${producto.precio}">
                 <img th:src="@{/img/{filename}(filename=*{producto.imagen})}"  th:alt="*{producto.imagen}">
                 <div>
+                    <ul class="lista-dispositivos">
+                        <li th:each="dispositivo: ${producto.dispositivo}" th:text="${dispositivo.nombre}" th:data-dispositivo="${dispositivo.nombre}"></li>
+                    </ul>
                     <h4 th:text="*{producto.nombre}" ></h4>
                     <p th:text="${pesos} + *{producto.precio}"></p>
                 </div>
             </a>
         </div>
     </div>
-
 </main>
 </body>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
@@ -35,5 +76,49 @@
 
     $(`.${dataDrop}`).toggleClass("active")
   })
+
+  $(".hero_cta").click(function () {
+        $("#dispositivo-juego-popup").html("")
+      const urlImagen= $(this).attr("data-imagen")
+      const nNombre= $(this).attr("data-nombre")
+      const nDetalles= $(this).attr("data-detalles")
+      const nCategoria= $(this).attr("data-categoria")
+      const nFormato= $(this).attr("data-formato")
+      const nDispositivo= $(this).attr("data-dispositivo")
+      const nPrecio= $(this).attr("data-precio")
+
+      $("#imagen-juego-popup").attr("src",`/img/${urlImagen}`)
+      $("#nombre-juego-popup").text(nNombre)
+      $("#descripcion-juego-popup").text(nDetalles)
+      $("#categoria-juego-popup").text(nCategoria)
+      $("#formato-juego-popup").text(nFormato)
+      $("#precio-juego-popup").text(`COP ${nPrecio}`)
+
+        $(this).find('ul.lista-dispositivos li').each(function() {
+            $("#dispositivo-juego-popup").append(`<li>${$(this).text()}</li>`)
+        });
+
+      $(".popup").addClass("modal--show")
+  })
+  $("#btn-close-popup").click(function () {
+      $(".popup").removeClass("modal--show")
+  })
+
 </script>
+<!--  <script>
+ const openModal= document.querySelector('.hero_cta');
+  const modal= document.querySelector('.popup');
+  const closeModal= document.querySelector('#btn-close-popup');
+
+  openModal.addEventListener('click',(e)=>{
+    e.preventDefault();
+    modal.classList.add('modal--show');
+  });
+
+  closeModal.addEventListener('click',(e)=>{
+    e.preventDefault();
+    modal.classList.remove('modal--show');
+  });
+
+</script>  -->
 </html>

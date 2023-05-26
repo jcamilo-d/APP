@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title th:text="${titulo}"></title>
@@ -28,7 +28,7 @@
 
         <td>
             <a class="btn btn-warning" th:href="@{/dispositivos/editar/} + ${tmpList.id}">EDITAR</a>
-            <a class="btn btn-danger" th:href="@{/dispositivos/eliminar/} + ${tmpList.id}" onclick="return confirm('Seguro que desea eliminar esta categoria')" >ELIMINAR</a>
+            <a class="btn btn-danger" th:href="@{/dispositivos/eliminar/} + ${tmpList.id}" onclick="return confirm('Se Eliminara los registros en los Juegos asociados con este Dispositivo. '+ '\n' + '¿Seguro que desea eliminar este Dispositivo?')" >ELIMINAR</a>
         </td>
     </tr>
     </tbody>

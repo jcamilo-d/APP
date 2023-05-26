@@ -17,6 +17,90 @@ color:#9CA0A0;
 margin:0px;
 }
 
+.popup{
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0,0,0,0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    z-index: 101;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity .6s;
+    --transform: translateY(-100vh) ;
+    --transition: transform .8s ;
+}
+
+.modal--show{
+    opacity: 1;
+    pointer-events: unset;
+    transition: opacity .6s .8s;
+    --transform: translateY(0);
+    --transition: transform .6s .6s;
+}
+.content-popup{
+    width: 70%;
+    max-height: 80vh;
+    display: flex;
+    flex-direction: column;
+    background-color: #202020;
+    border-radius: 20px;
+    padding:5px;
+    transform: var(--transform);
+    transition: var(--transition) ;
+}
+.content-btn-close-popup{
+    width: 100%;
+    height: 50px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 10px 0px;
+    border-bottom: 1px solid #121212;
+}
+.content-btn-close-popup a {
+    padding: 5px 15px;
+    transition: ease all 5s;
+}
+
+.content-btn-close-popup a :hover{
+    transform: rotate(180deg);
+}
+
+.content-btn-close-popup a svg{
+    width: 30px;
+    height: 30px;
+    fill: #fff;
+}
+
+.content-info-popup{
+    width: 100%;
+    /* max-height: calc(80vh - 50px); */
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    gap: 10px;
+}
+
+.content-info-popup img{
+    height: 400px;
+    width: 250px;
+    object-fit: cover;
+}
+
+.info-juego{
+    height:400px;
+    padding:20px;
+    overflow:auto;
+}
+
+
 #content-cards-game {
     width: 100%;
     display: flex;
@@ -53,6 +137,9 @@ margin:0px;
     align-items: start;
     padding: 0px 10px;
 }
+.card-game > div>ul{
+    display:none;
+}
 
 .card-game > div> h4{
     font-size: 18px;
@@ -65,5 +152,34 @@ margin:0px;
     font-size: 16px;
     margin: 0px;
     color: #fff;
+}
+
+#content-desc-game {
+    width: 100%;
+    display: flex;
+    flex-direction:column;
+    justify-content: space-between;
+    align-items: center;
+}
+#content-desc-game>div {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 2px 8px;
+    background-color: #121212;
+    border-radius: 10px;
+    color: #fff;
+    gap: 5px;
+    margin-bottom: 10px;
+}
+#content-desc-game>div>ul,
+#content-desc-game>div>p{
+    margin: 0px;
+    padding: 0px;
+}#content-desc-game>div>ul{
+    display:flex;
+    gap: 5px;
 }
 

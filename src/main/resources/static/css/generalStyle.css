@@ -1,7 +1,4 @@
-body {
-    margin: 0;
-    color: #fff;
-}
+
 
 ::-webkit-scrollbar-thumb {
     background-color: #d3d3d3;
@@ -9,6 +6,10 @@ body {
 ::-webkit-scrollbar {
     width: 6px;
     height: 5px;
+}
+
+body {
+margin: 0px;
 }
 
 a{
@@ -35,6 +36,7 @@ ul{
     height: calc(100vh - 70px);
     background-color: #121212;
     overflow:auto;
+    color:#fff;
 }
 
 #content-header-left {
