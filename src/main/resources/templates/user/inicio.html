@@ -69,5 +69,10 @@
 
     $(`.${dataDrop}`).toggleClass("active")
   })
+  $(".a-dropdown").click(function () {
+    const dataDrop = $(this).attr("data-a-drop")
+
+    $(`.${dataDrop}`).toggleClass("active")
+  })
 </script>
 </html>

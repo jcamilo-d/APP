@@ -33,7 +33,7 @@ public class ControllerProducto {
     private interfaceDispositivo dispositive;
 
 
-    @GetMapping("")
+    @GetMapping("/admin")
     public  String verPaginaInicio(Model model){
         model.addAttribute("titulo","Administrador JCGames");
         model.addAttribute("cuerpo","¡BIENVENIDO AL PANEL DE ADMINISTRADOR!");

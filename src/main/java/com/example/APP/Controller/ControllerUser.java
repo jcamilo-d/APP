@@ -35,12 +35,27 @@ public class ControllerUser {
     private interfaceProducto service;
 
 
+    @GetMapping("/login")
+    public String inicioSecion(){
+        return "login";
+    }
+
+    @GetMapping("/registro")
+    public String registroUsuarios(){
+        return "registro";
+    }
+
 
     public String verHeaderLeft(Model model){
         model.addAttribute("listaCategorias",category.listaCategoria());
         model.addAttribute("listaFormatos",format.listaFormatos());
         model.addAttribute("listaDispositivos",dispositive.listaDispositivos());
         return "user/headerLeft";
+    }
+
+    @GetMapping("")
+    public String verPaginaDefecto(){
+        return "user/inicio";
     }
     @GetMapping("/home")
     public String paginaInicio(Model model){

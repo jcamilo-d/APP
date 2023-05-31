@@ -18,3 +18,7 @@ h3{
     height:270px;
     object-fit: cover;
 }
+#juegos-carousel ul{
+    display:none;
+}
+

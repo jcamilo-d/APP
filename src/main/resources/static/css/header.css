@@ -27,7 +27,7 @@ margin-top:50px;
 
 nav,
     .offcanvas,.dropdown-menu {
-      background-color: #121212;
+      background-color: #121212 !important;
     }
     .navbar-toggler {
       border: none;

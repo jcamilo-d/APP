@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<html lang="es" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
 <head>
     <meta charset="UTF-8">
     <title th:text="${titulo}"></title>
@@ -73,6 +74,12 @@
 <script>
   $(".btn-dropdown").click(function () {
     const dataDrop = $(this).attr("data-drop")
+
+    $(`.${dataDrop}`).toggleClass("active")
+  })
+
+  $(".a-dropdown").click(function () {
+    const dataDrop = $(this).attr("data-a-drop")
 
     $(`.${dataDrop}`).toggleClass("active")
   })
