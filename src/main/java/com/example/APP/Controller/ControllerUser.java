@@ -40,10 +40,7 @@ public class ControllerUser {
         return "login";
     }
 
-    @GetMapping("/registro")
-    public String registroUsuarios(){
-        return "registro";
-    }
+
 
 
     public String verHeaderLeft(Model model){

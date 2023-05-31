@@ -12,7 +12,9 @@ import java.util.List;
 @Entity(name = "users")
 public class User {
 
-    public User(String username, String password, List<Authority> authorities) {
+    public User(String name,String lastname,String username, String password, List<Authority> authorities) {
+        this.name = name;
+        this.lastname = lastname;
         this.username = username;
         this.password = password;
         this.authorities = authorities;
@@ -21,7 +23,9 @@ public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
+    private String name;
+    private String lastname;
+    @Column(nullable = false)
     private String username;
     private String password;
 
