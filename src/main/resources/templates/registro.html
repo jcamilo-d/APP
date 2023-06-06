@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <link rel="stylesheet" href="/css/login.css">
+  <link rel="stylesheet" href="/libs/sweetalert2/sweetalert2.min.css">
+
 </head>
 <body>
 <div id="contenedor">
@@ -16,9 +18,8 @@
         Bienvenido
       </div>
       <form id="loginform" th:action="@{/registro}" th:object="${usuario}" method="post">
-        <div id="alert" th:if=${param.error}>
-          <div class="alert alert-danger">El Email ya esta Registrado
-          </div>
+        <div id="alert" th:if=${param.exist}>
+          <div class="alert alert-danger">El email ya esta en uso</div>
         </div>
         <input for="name" type="text" id="name"  name="name" placeholder="Nombre" th:field="*{name}" required autofocus="autofocus">
         <input for="lastname" type="text" id="lastname"  name="lastname" placeholder="Apellido" th:field="*{lastname}" required autofocus="autofocus">
@@ -28,9 +29,18 @@
 
         <button type="submit" title="Registrarme" name="Registrarme">Registrarme</button>
       </form>
+      <div class="pie-form">
+        <a th:href="@{/login}">volver</a>
+      </div>
     </div>
   </div>
 </div>
 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+<script src="
+https://cdn.jsdelivr.net/npm/sweetalert2@11.7.10/dist/sweetalert2.all.min.js
+"></script>
+
+<script src="/js/registro.js"></script>
 </body>
 </html>

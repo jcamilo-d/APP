@@ -6,10 +6,7 @@ import com.example.APP.Model.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
 @Controller
 @RequestMapping("/registro")
@@ -24,8 +21,14 @@ public class ControllerRegistro {
         return "registro";
     }
     @PostMapping
-    public String registrarCuentaDeUsuario(@ModelAttribute User user) {
+    public String registrarCuentaDeUsuario(@RequestParam("username") String username, @ModelAttribute User user,Model model) {
+        if (service.validarEmail(username).isEmpty()){
         service.guardar(user);
-        return "redirect:/login?exito";
+        return "redirect:/registro?alert=succes";
+        }else {
+            model.addAttribute("alerta","Este email ya esta en uso");
+            System.out.println("Este email ya esta en uso");
+        return "redirect:/registro?alert=exist";
+        }
     }
 }

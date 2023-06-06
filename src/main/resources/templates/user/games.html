@@ -63,7 +63,7 @@
                         <li th:each="dispositivo: ${producto.dispositivo}" th:text="${dispositivo.nombre}" th:data-dispositivo="${dispositivo.nombre}"></li>
                     </ul>
                     <h4 th:text="*{producto.nombre}" ></h4>
-                    <p th:text="${pesos} + *{producto.precio}"></p>
+                    <p id="precio" th:text="${pesos} + *{producto.precio}"></p>
                 </div>
             </a>
         </div>
@@ -112,20 +112,4 @@
   })
 
 </script>
-<!--  <script>
- const openModal= document.querySelector('.hero_cta');
-  const modal= document.querySelector('.popup');
-  const closeModal= document.querySelector('#btn-close-popup');
-
-  openModal.addEventListener('click',(e)=>{
-    e.preventDefault();
-    modal.classList.add('modal--show');
-  });
-
-  closeModal.addEventListener('click',(e)=>{
-    e.preventDefault();
-    modal.classList.remove('modal--show');
-  });
-
-</script>  -->
 </html>

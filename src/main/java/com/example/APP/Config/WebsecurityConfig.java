@@ -42,6 +42,7 @@ public class WebsecurityConfig {
                         .requestMatchers( "/registro**",
                                 "/js/**",
                                 "/css/**",
+                                "/libs/**",
                                 "/img/**").permitAll()
                         .anyRequest().authenticated()
                 )
@@ -53,7 +54,7 @@ public class WebsecurityConfig {
                 .invalidateHttpSession(true)
                 .clearAuthentication(true)
                 .logoutRequestMatcher(new AntPathRequestMatcher("/logout"))
-                .logoutSuccessUrl("/login?logout")
+                .logoutSuccessUrl("/login?logout?alert=logout")
                 .permitAll();
 
         return http.build();

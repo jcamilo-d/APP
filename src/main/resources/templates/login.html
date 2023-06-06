@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <link rel="stylesheet" href="/libs/sweetalert2/sweetalert2.min.css">
     <link rel="stylesheet" href="/css/login.css">
 </head>
 <body>
@@ -20,11 +21,6 @@
           <div class="alert alert-danger">Usuario o contraseña
             inválidos</div>
         </div>
-
-        <div id="alert2" th:if=${param.logout}>
-          <div class="alert alert-info">Ha cerrado sesión exitosamente
-          </div>
-        </div>
         <input for="username" type="text" id="username"  name="username" placeholder="Usuario" required autofocus="autofocus">
 
         <input for="password" type="password" id="password" name="password"placeholder="Contraseña" required autofocus="autofocus">
@@ -37,58 +33,11 @@
     </div>
   </div>
 </div>
-<!--<div class="container">
-  <div class="row">
-    <div class="col-md-6 col-md-offset-3">
-      <h1>Inicio de sesión</h1>
-      <form th:action="@{/login}" method="post">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+<script src="
+https://cdn.jsdelivr.net/npm/sweetalert2@11.7.10/dist/sweetalert2.all.min.js
+"></script>
 
-        <div th:if=${param.error}>
-          <div class="alert alert-danger">Usuario o contraseña
-            inválidos</div>
-        </div>
-
-        <div th:if=${param.logout}>
-          <div class="alert alert-info">Ha cerrado sesión exitosamente
-          </div>
-        </div>
-
-
-        <div class="form-group">
-          <label  for="username">Nombre de
-            usuario : </label> <input id="username"  name="username" type="text" class="form-control"
-                                      required autofocus="autofocus" placeholder="Digite su email ID">
-        </div>
-
-        <div class="form-group">
-          <label  for="password">Password : </label> <input
-                id="password" type="password"  name="password" class="form-control" required
-                autofocus="autofocus" placeholder="Digite su password">
-        </div>
-
-        <div class="form-group">
-          <div class="row">
-            <div class="col-md-6 col-md-offset-3">
-              <input type="submit" class="form-control btn btn-primary" name="login-submit" id="login-submit"
-                     value="Iniciar sesión" />
-            </div>
-          </div>
-        </div>
-      </form>
-      <div class="form-group">
-					<span>Si eres nuevo usuario <a th:href="@{/registro}">regístrate
-							aqui</a></span>
-      </div>
-
-    </div>
-  </div>
-</div>-->
-
-
-<!-- Latest compiled and minified JavaScript -->
-<script
-        src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
-        integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
-        crossorigin="anonymous"></script>
+<script src="/js/registro.js"></script>
 </body>
 </html>

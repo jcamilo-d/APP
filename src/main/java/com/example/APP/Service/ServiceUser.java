@@ -32,4 +32,9 @@ public class ServiceUser implements interfaceUser {
     public void eliminar(int id) {
         repositorio.deleteById(id);
     }
+
+    @Override
+    public List<User> validarEmail(String username) {
+        return repositorio.validarEmail(username);
+    }
 }
