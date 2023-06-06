@@ -34,7 +34,7 @@ public class ServiceUser implements interfaceUser {
         user.setLastname(user.getLastname());
         user.setUsername(user.getUsername());
         user.setPassword(passEncrip);
-        List.of(this.authorityRepository.findByName(AuthorityName.Usuario).get());
+        user.setAuthorities(List.of(authorityRepository.findByName(AuthorityName.Usuario).get()));
         repositorio.save(user);
     }
 
