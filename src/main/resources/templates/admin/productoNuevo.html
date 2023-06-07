@@ -13,19 +13,19 @@
 <div class="container">
     <div class="row">
         <div class="col-lg-6 col-md-6 col-sm-6 container justify-content-center card">
-            <h1 th:text="${cuerpo}" class="text-center"></h1>
+            <h3 th:text="${cuerpo}" class="text-center"></h3>
             <div class="card-body">
-                <form th:action="@{/productos/guardar}" th:object="${produc}" method="post" enctype="multipart/form-data">
+                <form th:action="@{/admin/productos/guardar}" th:object="${produc}" method="post" enctype="multipart/form-data">
                     <input type="hidden" th:field="*{id}">
 
                     <div class="form-group">
                         <label>Nombre del Juego: </label>
-                        <input type="text" name="nombre"  th:field="*{nombre}" class="form-control" placeholder="Escriba el Nombre del Juego" required>
+                        <input type="text" name="nombre"  th:field="*{nombre}" class="form-control" required>
                     </div>
 
                      <div class="form-group">
                         <label>Descripcion del Juego: </label>
-                         <textarea  cols="15" rows="10" style="height: 112px;"name="descripcion" th:field="*{descripcion}" class="form-control" placeholder="Escriba la Descripcion del Juego" required></textarea>
+                         <textarea  cols="15" rows="10" style="height: 112px;"name="descripcion" th:field="*{descripcion}" class="form-control" required></textarea>
                     </div>
 
                     <div class="form-group">

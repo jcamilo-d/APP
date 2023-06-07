@@ -9,7 +9,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 @Controller
-@RequestMapping("/")
+@RequestMapping("/admin")
 public class ControllerCategoria {
 
     @Autowired
@@ -34,7 +34,7 @@ public class ControllerCategoria {
     @PostMapping("/categorias/guardar")
     public String guardarCategoria(@ModelAttribute Categoria cat){
         service.guardar(cat);
-        return "redirect:/categorias";
+        return "redirect:/admin/categorias";
     }
 
     @GetMapping("/categorias/editar/{id}")
@@ -47,7 +47,7 @@ public class ControllerCategoria {
     @GetMapping("/categorias/eliminar/{id}")
     public String eliminarCategoria(@PathVariable("id") int id, Model model){
         service.eliminar(id);
-        return "redirect:/categorias";
+        return "redirect:/admin/categorias";
     }
 
 }

@@ -9,8 +9,10 @@ import java.util.Optional;
 public interface interfaceUser {
     public List<User> listaUsuarios();
     public void guardar(User user);
+    public void guardarAdmin(User user);
     public Optional<User> editar(int id);
     public void eliminar(int id);
     public List<User> validarEmail (String username);
+    public List<User> listaAdministradores();
 
 }

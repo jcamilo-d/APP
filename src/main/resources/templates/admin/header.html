@@ -34,8 +34,8 @@
                             CATEGORIAS
                         </a>
                         <ul class="dropdown-menu dropdown-menu-dark">
-                            <li><a class="dropdown-item" th:href="@{/categorias}">Ver</a></li>
-                            <li><a class="dropdown-item" th:href="@{/categorias/nuevo}">Nuevo Registro</a></li>
+                            <li><a class="dropdown-item" th:href="@{/admin/categorias}">Ver</a></li>
+                            <li><a class="dropdown-item" th:href="@{/admin/categorias/nuevo}">Nuevo Registro</a></li>
                         </ul>
                     </li>
                     <li class="nav-item dropdown">
@@ -43,8 +43,8 @@
                             FORMATO
                         </a>
                         <ul class="dropdown-menu dropdown-menu-dark">
-                            <li><a class="dropdown-item" th:href="@{/formatos}">Ver</a></li>
-                            <li><a class="dropdown-item" th:href="@{/formatos/nuevo}">Nuevo Registro</a></li>
+                            <li><a class="dropdown-item" th:href="@{/admin/formatos}">Ver</a></li>
+                            <li><a class="dropdown-item" th:href="@{/admin/formatos/nuevo}">Nuevo Registro</a></li>
                         </ul>
                     </li>
                     <li class="nav-item dropdown">
@@ -52,8 +52,8 @@
                             DISPOSITIVOS
                         </a>
                         <ul class="dropdown-menu dropdown-menu-dark">
-                            <li><a class="dropdown-item" th:href="@{/dispositivos}">Ver</a></li>
-                            <li><a class="dropdown-item" th:href="@{/dispositivos/nuevo}">Nuevo Registro</a></li>
+                            <li><a class="dropdown-item" th:href="@{/admin/dispositivos}">Ver</a></li>
+                            <li><a class="dropdown-item" th:href="@{/admin/dispositivos/nuevo}">Nuevo Registro</a></li>
                         </ul>
                     </li>
                     <li class="nav-item dropdown">
@@ -61,8 +61,17 @@
                             JUEGOS
                         </a>
                         <ul class="dropdown-menu dropdown-menu-dark">
-                            <li><a class="dropdown-item" th:href="@{/productos}">Ver</a></li>
-                            <li><a class="dropdown-item" th:href="@{/productos/nuevo}">Nuevo Registro</a></li>
+                            <li><a class="dropdown-item" th:href="@{/admin/productos}">Ver</a></li>
+                            <li><a class="dropdown-item" th:href="@{/admin/productos/nuevo}">Nuevo Registro</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            ADMINISTRADORES
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-dark">
+                            <li><a class="dropdown-item" th:href="@{/admin/administradores}">Ver</a></li>
+                            <li><a class="dropdown-item" th:href="@{/admin/administradores/nuevo}">Nuevo Registro</a></li>
                         </ul>
                     </li>
                 </ul>

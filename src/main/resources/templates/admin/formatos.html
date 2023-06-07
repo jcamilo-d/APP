@@ -27,8 +27,8 @@
         <td th:text = "${tmpList.nombre}" ></td>
 
         <td>
-            <a class="btn btn-warning" th:href="@{/formatos/editar/} + ${tmpList.id}">EDITAR</a>
-            <a class="btn btn-danger" th:href="@{/formatos/eliminar/} + ${tmpList.id}" onclick="return confirm('Se Eliminaran los Juegos asociados con este Formato. '+ '\n' + '¿Seguro que desea eliminar este formato?')" >ELIMINAR</a>
+            <a class="btn btn-warning" th:href="@{/admin/formatos/editar/} + ${tmpList.id}">EDITAR</a>
+            <a class="btn btn-danger" th:href="@{/admin/formatos/eliminar/} + ${tmpList.id}" onclick="return confirm('Se Eliminaran los Juegos asociados con este Formato. '+ '\n' + '¿Seguro que desea eliminar este formato?')" >ELIMINAR</a>
         </td>
     </tr>
     </tbody>

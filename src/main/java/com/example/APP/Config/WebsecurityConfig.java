@@ -1,6 +1,7 @@
 package com.example.APP.Config;
 
 import com.example.APP.Interface.interfaceUser;
+import com.example.APP.Model.Authority;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -17,6 +18,8 @@ import org.springframework.security.provisioning.InMemoryUserDetailsManager;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
+
+import static com.example.APP.Utils.AuthorityName.Administrador;
 
 @Configuration
 @EnableWebSecurity
@@ -45,6 +48,14 @@ public class WebsecurityConfig {
                                 "/css/**",
                                 "/libs/**",
                                 "/img/**").permitAll()
+
+
+                ).authorizeHttpRequests((requests)->requests
+                        .requestMatchers("/admin/**",
+                                "/js/**",
+                                "/css/**",
+                                "/libs/**",
+                                "/img/**").hasAuthority("Administrador")
                         .anyRequest().authenticated()
                 )
                 .formLogin()
@@ -60,7 +71,6 @@ public class WebsecurityConfig {
 
         return http.build();
     }
-
 
 
 }

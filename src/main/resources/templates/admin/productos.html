@@ -45,8 +45,8 @@
             </td>
 
             <td>
-                <a class="btn btn-warning" th:href="@{/productos/editar/} + ${producto.id}">EDITAR</a>
-                <a class="btn btn-danger" th:href="@{/productos/eliminar/} + ${producto.id}" onclick="return confirm('Seguro que desea eliminar este Producto')" >ELIMINAR</a>
+                <a class="btn btn-warning" th:href="@{/admin/productos/editar/} + ${producto.id}">EDITAR</a>
+                <a class="btn btn-danger" th:href="@{/admin/productos/eliminar/} + ${producto.id}" onclick="return confirm('Seguro que desea eliminar este Producto')" >ELIMINAR</a>
             </td>
         </tr>
         </tbody>

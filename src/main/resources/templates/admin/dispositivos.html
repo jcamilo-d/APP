@@ -27,8 +27,8 @@
         <td th:text = "${tmpList.nombre}" ></td>
 
         <td>
-            <a class="btn btn-warning" th:href="@{/dispositivos/editar/} + ${tmpList.id}">EDITAR</a>
-            <a class="btn btn-danger" th:href="@{/dispositivos/eliminar/} + ${tmpList.id}" onclick="return confirm('Se Eliminara los registros en los Juegos asociados con este Dispositivo. '+ '\n' + '¿Seguro que desea eliminar este Dispositivo?')" >ELIMINAR</a>
+            <a class="btn btn-warning" th:href="@{/admin/dispositivos/editar/} + ${tmpList.id}">EDITAR</a>
+            <a class="btn btn-danger" th:href="@{/admin/dispositivos/eliminar/} + ${tmpList.id}" onclick="return confirm('Se Eliminara los registros en los Juegos asociados con este Dispositivo. '+ '\n' + '¿Seguro que desea eliminar este Dispositivo?')" >ELIMINAR</a>
         </td>
     </tr>
     </tbody>

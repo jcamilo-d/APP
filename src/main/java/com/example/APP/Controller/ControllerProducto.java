@@ -20,7 +20,7 @@ import java.text.DecimalFormat;
 import java.util.List;
 
 @Controller
-@RequestMapping("/")
+@RequestMapping("/admin")
 public class ControllerProducto {
 
     @Autowired
@@ -33,7 +33,7 @@ public class ControllerProducto {
     private interfaceDispositivo dispositive;
 
 
-    @GetMapping("/admin")
+    @GetMapping
     public  String verPaginaInicio(Model model){
         model.addAttribute("titulo","Administrador JCGames");
         model.addAttribute("cuerpo","¡BIENVENIDO AL PANEL DE ADMINISTRADOR!");
@@ -80,7 +80,7 @@ public class ControllerProducto {
         }
 
         service.guardar(prod);
-        return "redirect:/productos";
+        return "redirect:/admin/productos";
     }
 
     @GetMapping("/productos/editar/{id}")
@@ -95,7 +95,7 @@ public class ControllerProducto {
     @GetMapping("/productos/eliminar/{id}")
     public String eliminarProducto(@PathVariable("id") int id, Model model){
         service.eliminar(id);
-        return "redirect:/productos";
+        return "redirect:/admin/productos";
     }
 
 }

@@ -15,12 +15,27 @@
         <div class="col-lg-6 col-md-6 col-sm-6 container justify-content-center card">
             <h3 th:text="${cuerpo}" class="text-center"></h3>
             <div class="card-body">
-                <form th:action="@{/admin/dispositivos/guardar}" th:object="${dispositive}" method="post">
+                <form th:action="@{/admin/administradores/guardar}" th:object="${admin}" method="post">
                     <input type="hidden" th:field="*{id}">
+                    <div id="alert" th:if=${param.exist}>
+                        <div class="alert alert-danger">El email que Registro ya Eiste</div>
+                    </div>
 
                     <div class="form-group">
-                        <label>Nombre del Dispositivo: </label>
-                        <input type="text" name="nombre" th:field="*{nombre}" class="form-control" placeholder="ejemplo: PC, XboxOne, NintendoSwitch, PlayStation5... " required>
+                        <label>Nombre: </label>
+                        <input type="text" name="name" th:field="*{name}" class="form-control"  required>
+                    </div>
+                    <div class="form-group">
+                        <label>Apellido: </label>
+                        <input type="text" name="lastname" th:field="*{lastname}" class="form-control"  required>
+                    </div>
+                    <div class="form-group">
+                        <label>Email: </label>
+                        <input type="email" name="username" th:field="*{username}" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Contraseña: </label>
+                        <input type="password" name="password" th:field="*{password}" class="form-control" required>
                     </div>
                     <br>
                     <div>

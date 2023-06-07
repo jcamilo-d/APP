@@ -39,6 +39,19 @@ public class ServiceUser implements interfaceUser {
     }
 
     @Override
+    public void guardarAdmin(User user) {
+        String pass= user.getPassword();
+        String passEncrip = passwordEncoder.encode(pass);
+        user.setId(user.getId());
+        user.setName(user.getName());
+        user.setLastname(user.getLastname());
+        user.setUsername(user.getUsername());
+        user.setPassword(passEncrip);
+        user.setAuthorities(List.of(authorityRepository.findByName(AuthorityName.Administrador).get()));
+        repositorio.save(user);
+    }
+
+    @Override
     public Optional<User> editar(int id) {
         return repositorio.findById(id);
     }
@@ -51,5 +64,10 @@ public class ServiceUser implements interfaceUser {
     @Override
     public List<User> validarEmail(String username) {
         return repositorio.validarEmail(username);
+    }
+
+    @Override
+    public List<User> listaAdministradores() {
+        return repositorio.listaAdministradores();
     }
 }

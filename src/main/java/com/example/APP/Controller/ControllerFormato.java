@@ -9,7 +9,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 @Controller
-@RequestMapping()
+@RequestMapping("/admin")
 public class ControllerFormato{
 
     @Autowired
@@ -33,7 +33,7 @@ public class ControllerFormato{
     @PostMapping("/formatos/guardar")
     public String guardarFormato(@ModelAttribute Formato formato){
         service.guardar(formato);
-        return "redirect:/formatos";
+        return "redirect:/admin/formatos";
     }
 
     @GetMapping("/formatos/editar/{id}")
@@ -45,7 +45,7 @@ public class ControllerFormato{
     @GetMapping("/formatos/eliminar/{id}")
     public String eliminarFormato(@PathVariable("id") int id, Model model){
         service.eliminar(id);
-        return "redirect:/formatos";
+        return "redirect:/admin/formatos";
     }
 
 }
